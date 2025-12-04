@@ -1,0 +1,10 @@
+{
+"name": "expressmas",
+"version": "1.0.0",
+"private": true,
+"dependencies": {
+"@vercel/kv": "^1.0.0",
+"nodemailer": "^6.9.3",
+"uuid": "^9.0.0"
+}
+}
