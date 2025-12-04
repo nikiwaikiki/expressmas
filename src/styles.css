@@ -1,0 +1,48 @@
+:root{
+--bg: #fffaf0;
+--card: #fff;
+--accent: #a71d31;
+}
+body{font-family: Inter, system-ui, Arial, sans-serif;background:linear-gradient(180deg,#0f172a, #0b1220);color:#fff;margin:0;padding:20px}
+.header{max-width:900px;margin:0 auto 18px;text-align:center}
+.header h1{margin:6px 0}
+.app-root{max-width:900px;margin:0 auto}
+
+
+.editor-root{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+@media(max-width:800px){.editor-root{grid-template-columns:1fr}}
+
+
+.card-preview{width:360px;height:240px;perspective:1000px;cursor:pointer;margin-bottom:8px}
+.card-inner{position:relative;width:100%;height:100%;transition:transform 0.8s;transform-style:preserve-3d}
+.card-preview.flipped .card-inner{transform:rotateY(180deg)}
+.card-front,.card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.card-front{background:linear-gradient(180deg,#e6f7ff,#dbeafe);display:flex;align-items:center;justify-content:center}
+.card-back{transform:rotateY(180deg);background:#fff;padding:16px;box-sizing:border-box}
+.card-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:18px;box-sizing:border-box}
+.front-text{font-size:28px;font-weight:700;color:#7f1d1d;text-align:center;user-select:text;outline:none}
+.back-text textarea{width:100%;height:100%;border:0;resize:none;font-size:16px;padding:8px;font-family:inherit}
+
+
+.send-form{display:flex;flex-direction:column;gap:10px}
+.send-form input[type="email"],.send-form input[type="text"]{padding:8px;border-radius:6px;border:0}
+.buttons{display:flex;gap:8px}
+.btn{padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
+.btn.primary{background:#9b111e;color:white}
+
+
+.hint{opacity:0.8;font-size:13px;margin-top:10px}
+.result a{color:#ffd700;word-break:break-all}
+
+
+.view-root{max-width:900px;margin:20px auto;background:transparent;text-align:center}
+.final-header{font-size:18px;margin-bottom:10px}
+.card-display{display:flex;justify-content:center}
+.card-static{display:flex;gap:20px}
+.static-front,.static-back{width:320px;height:220px;border-radius:10px;box-shadow:0 8px 22px rgba(0,0,0,0.5);background:#fff;color:#000}
+.static-front .front-text{padding:18px;font-size:26px;color:#7f1d1d}
+.static-back .back-text{padding:18px;font-size:16px;white-space:pre-wrap}
+
+
+/* small responsive */
+@media(max-width:520px){.editor-root{grid-template-columns:1fr}.card-preview{width:100%;height:200px}.static-front,.static-back{width:280px}}
